@@ -1,0 +1,39 @@
+To solve the specificity issue, we can use the `!important` flag or rewrite the selectors for clarity and predictability:
+
+```css
+div {
+  color: blue;
+}
+
+.special-class {
+  color: red;
+}
+
+#special-id {
+  color: green;
+}
+
+#special-id.special-class {
+  color: purple !important; /*Using !important (use sparingly)*/
+}
+```
+
+Alternatively, for better readability and maintainability we can rearrange selectors to ensure the most specific selector comes first:
+
+```css
+#special-id.special-class {
+  color: purple;
+}
+
+#special-id {
+  color: green;
+}
+
+.special-class {
+  color: red;
+}
+
+div {
+  color: blue;
+}
+```
