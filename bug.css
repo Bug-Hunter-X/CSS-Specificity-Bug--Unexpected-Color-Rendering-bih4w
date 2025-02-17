@@ -1,0 +1,19 @@
+The following CSS code causes unexpected behavior in some browsers due to specificity issues:
+
+```css
+div {
+  color: blue;
+}
+
+.special-class {
+  color: red;
+}
+
+#special-id {
+  color: green;
+}
+
+#special-id.special-class {
+  color: purple; /* This rule may not always override the others */
+}
+```
